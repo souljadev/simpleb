@@ -1,6 +1,6 @@
 {
   "auto-close-tag.excludedTags": [
-  
+
     "area",
     "base",
     "br",
@@ -17,5 +17,7 @@
     "source",
     "track",
     "wbr"
-  ]
+  ],
+  "typescript.validate.enable": false,
+  "editor.showDeprecated": false
 }
