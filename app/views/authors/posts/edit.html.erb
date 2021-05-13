@@ -51,23 +51,11 @@
         <% end %>
       </div>
 
-      <!--HTML from anywhere-->
-      <div data-controller="hello">
-        <input data-hello-target="name" type="text">
-
-        <button data-action="click->hello#greet">
-          Greet
-        </button>
-
-        <span data-hello-target="output">
-        </span>
-      </div>
-
       <div class="card-body pt-5" data-controller="elements">
-        <ul id='elements'>
-          <% @post.elements.each do |element| %>
+        <ul id='elements' data-action="drop->elements#sort">
+          <% @post.elements.order(position: :asc).each do |element| %>
             <% if element.persisted? %>
-              <li>
+              <li data-id="<%= element.id %>" class="element-item">
                 <% if element.paragraph? %>
                   <div class="mb-4 p-3 paragraph">
                     <div class="paragraph-content">
