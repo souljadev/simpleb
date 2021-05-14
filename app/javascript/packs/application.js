@@ -37,7 +37,8 @@ document.addEventListener('turbolinks:load', () => {
     element.classList.add('d-none')
     element.previousElementSibling.classList.remove('d-none')
   })
-  let element = document.getElementById('elements')
-  Sortable.create(elements, { animation: 150 })
+  let sortable_elements = document.getElementById('elements')
+  if (sortable_elements != null)
+    Sortable.create(sortable_elements, { animation: 150 })
 })
 
