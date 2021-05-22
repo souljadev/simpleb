@@ -1,7 +1,7 @@
 module Readers
   class HomeController < ReadersController
-    def show
-      @post = Post.published.friendly.find(params[:id])
+    def index
+      @posts = Post.published.most_recently_published
     end
   end
 end
