@@ -16,9 +16,10 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require("trix")
+const Trix = require("trix")
 require("@rails/actiontext")
 
+Trix.config.blockAttributes.heading1.tagName = "h3";
 document.addEventListener('turbolinks:load', () => {
   document.addEventListener('click', () => {
     let element = event.target.closest('.paragraph-content')
